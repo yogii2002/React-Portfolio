@@ -35,7 +35,7 @@ export default function Skills() {
   return (
     <div id="skills" className="">
       
-      <h1 className=' text-[6rem] font-semibold'>Skills</h1>
+      <h1 className=' text-[3rem] font-semibold'>Skills</h1>
       <div className='mt-[3rem] space-y-[3rem] '>
         <div className={`programmingLanguages flex flex-col items-center justify-center transform transition-transform duration-[3000ms] ease-out
             ${programmingLanguagesVisibile ? "translate-x-0 opacity-100" : "-translate-x-[50%] opacity-0"}` } ref={ref1}>

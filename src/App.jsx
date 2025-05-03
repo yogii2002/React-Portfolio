@@ -5,12 +5,10 @@ import './index.css';
 import Skills from './components/pages/Skills'
 import Projects from './components/pages/Projects'
 import Contact from './components/pages/Contact'
-import Experience from './components/pages/Experience'
-// import LoadingPage from "./components/pages/LoadingPage";
 import Education from './components/pages/Education';
 import Acheivements from './components/pages/Acheivements';
-import TextLoadingAnimation from './components/utils/textLoadingAnimation';
-// import { Routes , Route } from 'react-router-dom';
+import TextLoadingAnimation from './components/utils/TextLoadingAnimation';
+
 function App() {
   const [animationRender,setAnimationRender]=useState(true);
   
@@ -23,7 +21,7 @@ function App() {
 
   return (
     
-      <div className='w-full h-full m-0 p-0  overflow-x-hidden'>
+      <div className='w-full h-full m-0 p-0  overflow-x-hidden max-w-[90%]  mx-auto'>
         
       {
             animationRender?
@@ -34,7 +32,6 @@ function App() {
                 <Education/>
                 <Skills/>
                 <Projects/>
-                <Experience/>
                 <Acheivements/>
                 <Contact/>
             </div>

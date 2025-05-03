@@ -22,7 +22,7 @@ export default function Navbar() {
                 <a href='#education'>Education</a>
                 <a href='#skills' >Skills</a>
                 <a  href='#projects'>Projects</a>
-                <a href='#experience'>Experience</a>
+                {/* <a href='#experience'>Experience</a> */}
                 <a  href='#acheivements'>Acheivements</a>
                 <a href='#contact' >Contact Me</a>
             </div>

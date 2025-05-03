@@ -11,7 +11,7 @@ export default function Education() {
   const isEduVisibleInPort=isVisibleInViewPort(educationRef);
   return (
     <div id='education' className='mt-[10rem] w-[100%] mx-auto'>
-      <h2 className=' text-[6rem] font-semibold mb-[5rem]'>Education</h2>
+      <h2 className=' text-[3rem] font-semibold mb-[5rem]'>Education</h2>
      
       <div  className={`flex flex-row items-center justify-center gap-[2rem] transform transition-transform duration-[3000ms] ease-out
       ${isEduVisibleInPort ? "translate-x-0 opacity-100" : "-translate-x-[50%] opacity-0"}  ` } ref={educationRef}>

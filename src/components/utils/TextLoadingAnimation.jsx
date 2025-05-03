@@ -1,17 +1,17 @@
 import  { useState, useEffect } from 'react';
 const TextLoadingAnimation = () => {
-  const [size, setSize] = useState(20); 
+  const [size, setSize] = useState(0); 
 
   useEffect(() => {
     const interval = setInterval(() => {
       setSize((prevSize) => {
-        if (prevSize >= 50) {
+        if (prevSize >= 100) {
           clearInterval(interval);
           return prevSize;
         }
-        return prevSize + 5; 
+        return prevSize + 50; 
       });
-    }, 200);
+    }, 2000);
     return () => clearInterval(interval); 
   }, []);
 
