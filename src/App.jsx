@@ -21,7 +21,7 @@ function App() {
 
   return (
     
-      <div className='w-full h-full m-0 p-0  overflow-x-hidden max-w-[90%]  mx-auto'>
+      <div className='w-full h-full m-0 p-0  overflow-x-hidden   '>
         
       {
             animationRender?
