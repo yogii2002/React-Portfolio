@@ -1,47 +1,51 @@
-import React from 'react'
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import isVisibleInViewPort from './isVisibleInViewPort';
-
 import { FaLink } from "react-icons/fa6";
-import { SiLeetcode,SiGeeksforgeeks } from 'react-icons/si';
-import { div } from 'framer-motion/client';
+import { SiLeetcode, SiGeeksforgeeks } from 'react-icons/si';
 
+export default function AcheivementCard({ title, profilelink }) {
+  const ref = useRef();
+  const visible = isVisibleInViewPort(ref);
 
-const AcheivementCard = ({title,profilelink}) => {
-  const acheivementCardRef = useRef();
-    const isAcheivementCardVisibleInPort = isVisibleInViewPort(acheivementCardRef);
-    return (
-      <div ref={acheivementCardRef}  className={`capitalize rounded-2xl pt-[2rem] pb-[2rem] pr-[2rem] pl-[2rem] flex flex-col border-slate-400 hover:bg-gradient-to-r from-gray-800 via-slate-700 to-slate-800  transition-opacity ease-in duration-1000 ${isAcheivementCardVisibleInPort ? "opacity-100" : "opacity-0"} gap-y-3 border-[1px] border-gray-200 border-opacity-70`} >
-          <div className='flex gap-3 '>
-            
-            
-            
-            <p className='font-semibold flex gap-2  bg-gradient-to-tl from-[#b9e7f0] via-[#58b6cb] to-[#089bbc]  bg-transparent bg-clip-text text-transparent text-[2rem] justify-center items-center'>
-              
-              {
-                title === "Leetcode" ? 
-                (
-                <SiLeetcode size={30} color="#FFA116" />
-                ) : 
-                (
-                  <SiGeeksforgeeks size={30} color="#2F8D46" />
-                )
-              }
-              {title}
-
-            </p>
-            
-            <div className='flex gap-2 text-[2rem] mt-2  '>
-              <a className='hover:text-teal-500 ' href={profilelink}><FaLink/></a>
-            </div>
-          </div>
-  
-          
-          
-  
-  
+  return (
+    <div
+      ref={ref}
+      className={`
+        capitalize rounded-2xl
+        p-4 sm:p-6 md:p-8 lg:p-10
+        flex flex-col gap-y-3
+        border border-gray-200 border-opacity-70
+        hover:bg-gradient-to-r from-gray-800 via-slate-700 to-slate-800
+        transition-opacity ease-in duration-1000
+        ${visible ? 'opacity-100' : 'opacity-0'}
+      `}
+    >
+      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+        <p
+          className="
+            font-semibold flex items-center gap-2
+            bg-gradient-to-tl from-[#b9e7f0] via-[#58b6cb] to-[#089bbc]
+            bg-clip-text text-transparent
+            text-lg sm:text-xl md:text-2xl lg:text-3xl
+          "
+        >
+          {title === "Leetcode"
+            ? <SiLeetcode size={24} />
+            : <SiGeeksforgeeks size={24} />
+          }
+          {title}
+        </p>
+        <a
+          href={profilelink}
+          className="
+            mt-1 sm:mt-0
+            text-lg sm:text-xl md:text-2xl lg:text-3xl
+            hover:text-teal-500 transition-colors duration-300
+          "
+        >
+          <FaLink />
+        </a>
       </div>
-    )
+    </div>
+  );
 }
-
-export default AcheivementCard

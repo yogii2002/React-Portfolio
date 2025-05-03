@@ -1,88 +1,122 @@
-import React from "react";
-import { useState } from "react";
-
+import React, { useState } from "react";
 import { FaGithub } from "react-icons/fa";
-import PortfolioButton from './PortfolioButton';
-// import ContactForm from './ContactForm';
-import { div } from 'framer-motion/client';
+import PortfolioButton from "./PortfolioButton";
+
 export function ContactForm() {
-     const [formdata,setFormData]=useState({
-            contactname:"",
-            contactemail:"",
-            contactmessage:""
-        });
-        const handleSubmit=(event)=>{
-    
-        };
-        const onchangehandler=()=>{
-    
-        }
+  const [formData, setFormData] = useState({
+    contactname: "",
+    contactemail: "",
+    contactmessage: "",
+  });
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // your submit logic here
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
   return (
-    <section className="">
-        <form onSubmit={handleSubmit} className='flex flex-col space-y-[1rem]'>
-
-       
-        <div class="relative">
-            <input type="text" id="name" className=" bg-[#010122]  peer p-4 block w-full border-gray-200 rounded-lg text-sm placeholder:text-transparent focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none
-            focus:pt-6
-            focus:pb-2
-            [&:not(:placeholder-shown)]:pt-6
-            [&:not(:placeholder-shown)]:pb-2
-            autofill:pt-6
-            autofill:pb-2" placeholder="Name"/>
-            <label for="name" className="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] peer-disabled:opacity-50 peer-disabled:pointer-events-none
-            peer-focus:scale-90
-            peer-focus:translate-x-0.5
-            peer-focus:-translate-y-1.5
-            peer-focus:text-gray-500
-            peer-[:not(:placeholder-shown)]:scale-90
-            peer-[:not(:placeholder-shown)]:translate-x-0.5
-            peer-[:not(:placeholder-shown)]:-translate-y-1.5
-            peer-[:not(:placeholder-shown)]:text-gray-500">Name</label>
-
+    <section className="w-full px-4 py-8 sm:px-6 md:px-12 lg:px-24 bg-[#010122]">
+      <form
+        onSubmit={handleSubmit}
+        className="max-w-2xl mx-auto flex flex-col space-y-6"
+      >
+        {/* Name */}
+        <div className="relative">
+          <input
+            type="text"
+            id="contactname"
+            value={formData.contactname}
+            onChange={handleChange}
+            placeholder="Name"
+            className="
+              peer w-full bg-transparent border border-gray-700 rounded-lg
+              px-4 py-3 sm:px-5 sm:py-4 md:px-6 md:py-5
+              text-sm sm:text-base md:text-lg
+              placeholder-transparent focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500
+              transition-all"
+          />
+          <label
+            htmlFor="contactname"
+            className="
+              absolute left-4 top-1/2 transform -translate-y-1/2
+              peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-500
+              peer-focus:top-1 peer-focus:text-xs peer-focus:text-blue-400
+              text-gray-400 text-sm
+              transition-all"
+          >
+            Name
+          </label>
         </div>
-        
-        <div class="relative">
-            <input type="email" id="email" className=" bg-[#010122]  peer p-4 block w-full border-gray-200 rounded-lg text-sm placeholder:text-transparent focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none
-            focus:pt-6
-            focus:pb-2
-            [&:not(:placeholder-shown)]:pt-6
-            [&:not(:placeholder-shown)]:pb-2
-            autofill:pt-6
-            autofill:pb-2" placeholder="Enail"/>
-            <label for="email" className="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] peer-disabled:opacity-50 peer-disabled:pointer-events-none
-            peer-focus:scale-90
-            peer-focus:translate-x-0.5
-            peer-focus:-translate-y-1.5
-            peer-focus:text-gray-500
-            peer-[:not(:placeholder-shown)]:scale-90
-            peer-[:not(:placeholder-shown)]:translate-x-0.5
-            peer-[:not(:placeholder-shown)]:-translate-y-1.5
-            peer-[:not(:placeholder-shown)]:text-gray-500">Email</label>
 
-        </div> 
-
-        <div class="relative">
-            <textarea type="text" id="message" className=" bg-[#010122]  peer p-4 block w-full border-gray-200 rounded-lg text-sm placeholder:text-transparent focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none
-            focus:pt-6
-            focus:pb-2
-            [&:not(:placeholder-shown)]:pt-6
-            [&:not(:placeholder-shown)]:pb-2
-            autofill:pt-6
-            autofill:pb-2" placeholder="Enail"/>
-            <label for="message" className="absolute top-0 start-0 p-4 h-full text-sm truncate pointer-events-none transition ease-in-out duration-100 border border-transparent  origin-[0_0] peer-disabled:opacity-50 peer-disabled:pointer-events-none
-            peer-focus:scale-90
-            peer-focus:translate-x-0.5
-            peer-focus:-translate-y-1.5
-            peer-focus:text-gray-500
-            peer-[:not(:placeholder-shown)]:scale-90
-            peer-[:not(:placeholder-shown)]:translate-x-0.5
-            peer-[:not(:placeholder-shown)]:-translate-y-1.5
-            peer-[:not(:placeholder-shown)]:text-gray-500">Message</label>
-
+        {/* Email */}
+        <div className="relative">
+          <input
+            type="email"
+            id="contactemail"
+            value={formData.contactemail}
+            onChange={handleChange}
+            placeholder="Email"
+            className="
+              peer w-full bg-transparent border border-gray-700 rounded-lg
+              px-4 py-3 sm:px-5 sm:py-4 md:px-6 md:py-5
+              text-sm sm:text-base md:text-lg
+              placeholder-transparent focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500
+              transition-all"
+          />
+          <label
+            htmlFor="contactemail"
+            className="
+              absolute left-4 top-1/2 transform -translate-y-1/2
+              peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-500
+              peer-focus:top-1 peer-focus:text-xs peer-focus:text-blue-400
+              text-gray-400 text-sm
+              transition-all"
+          >
+            Email
+          </label>
         </div>
-            <PortfolioButton>Submit</PortfolioButton>                        
-        </form>
+
+        {/* Message */}
+        <div className="relative">
+          <textarea
+            id="contactmessage"
+            value={formData.contactmessage}
+            onChange={handleChange}
+            placeholder="Message"
+            rows={4}
+            className="
+              peer w-full bg-transparent border border-gray-700 rounded-lg
+              px-4 py-3 sm:px-5 sm:py-4 md:px-6 md:py-5
+              text-sm sm:text-base md:text-lg
+              placeholder-transparent focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500
+              transition-all resize-none"
+          />
+          <label
+            htmlFor="contactmessage"
+            className="
+              absolute left-4 top-1/2 transform -translate-y-1/2
+              peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-500
+              peer-focus:top-1 peer-focus:text-xs peer-focus:text-blue-400
+              text-gray-400 text-sm
+              transition-all"
+          >
+            Message
+          </label>
+        </div>
+
+        <div className="flex justify-center">
+          <PortfolioButton>
+            <span className="flex items-center space-x-2">
+              <FaGithub className="text-lg sm:text-xl" />
+              <span>Submit</span>
+            </span>
+          </PortfolioButton>
+        </div>
+      </form>
     </section>
   );
 }
