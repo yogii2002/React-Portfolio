@@ -6,7 +6,7 @@ import DataAnalytics from '../../assets/project_logo/DataAnalytics.svg';
 import Weather from '../../assets/project_logo/Weather.svg';
 import Password from '../../assets/project_logo/Password.svg';
 import TicTacToe from '../../assets/project_logo/TicTacToe.svg';
-
+import UpwiseLogo from '../../assets/project_logo/UpwiseLogo.png'
 export default function Projects() {
   return (
     <div id="projects" className="mt-32 mb-8">
@@ -31,6 +31,14 @@ export default function Projects() {
           projectdescription="Kanoon Sarathi empowers lawyers, judges, and law students to quickly access relevant case laws and legal precedents, reducing time spent on manual research."
           liveurl="https://web-production-3add.up.railway.app/"
           githuburl="https://github.com/yogii2002/Kanoon-Sarthi"
+        />
+
+        <ProjectCard 
+          projectlogo={UpwiseLogo}
+          projecttitle="Upwise"
+          projectdescription="Growing up with wisdom with AI POWERED e-learning Platform."
+          liveurl="https://upwise-frontend.vercel.app/"
+          githuburl="https://github.com/yogii2002/Upwise"
         />
 
         <ProjectCard 

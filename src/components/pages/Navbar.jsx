@@ -19,6 +19,7 @@ export default function Navbar() {
             <div className="nav-links flex flex-wrap gap-y-4 gap-x-6 md:space-x-[2rem] w-full md:w-[70%] justify-center md:justify-around font-sans font-semibold text-gray-300 text-center">
                 <a href='#education'>Education</a>
                 <a href='#skills'>Skills</a>
+                <a href='#work'>Work</a>
                 <a href='#projects'>Projects</a>
                 <a href='#acheivements'>Acheivements</a>
                 <a href='#contact'>Contact Me</a>

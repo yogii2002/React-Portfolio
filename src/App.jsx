@@ -8,12 +8,13 @@ import Contact from './components/pages/Contact'
 import Education from './components/pages/Education';
 import Acheivements from './components/pages/Acheivements';
 import TextLoadingAnimation from './components/utils/TextLoadingAnimation';
+import WorkExperience from './components/pages/WorkExperience';
 
 function App() {
   const [animationRender,setAnimationRender]=useState(true);
   
       useEffect(()=>{
-          setTimeout(()=>{
+          const timeout=setTimeout(()=>{
               setAnimationRender(false);
           },3000)
           return ()=>clearTimeout(timeout);
@@ -31,6 +32,7 @@ function App() {
                 <HomePage/>
                 <Education/>
                 <Skills/>
+                <WorkExperience/>
                 <Projects/>
                 <Acheivements/>
                 <Contact/>

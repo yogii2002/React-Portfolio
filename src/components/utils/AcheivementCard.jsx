@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 import isVisibleInViewPort from './isVisibleInViewPort';
 import { FaLink } from "react-icons/fa6";
-import { SiLeetcode, SiGeeksforgeeks } from 'react-icons/si';
-
-export default function AcheivementCard({ title, profilelink }) {
+import { SiGeeksforgeeks } from "react-icons/si";
+import { SiLeetcode } from "react-icons/si";
+export default function AcheivementCard({ title, profilelink , description ,icon}) {
   const ref = useRef();
   const visible = isVisibleInViewPort(ref);
 
@@ -19,32 +19,36 @@ export default function AcheivementCard({ title, profilelink }) {
         transition-opacity ease-in duration-1000
         ${visible ? 'opacity-100' : 'opacity-0'}
       `}
-    >
+    > 
       <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-        <p
+        <div
           className="
-            font-semibold flex items-center gap-2
-            bg-gradient-to-tl from-[#b9e7f0] via-[#58b6cb] to-[#089bbc]
-            bg-clip-text text-transparent
-            text-lg sm:text-xl md:text-2xl lg:text-3xl
+            font-semibold  text-[1rem] flex-col m-1 p-1 
           "
         >
-          {title === "Leetcode"
-            ? <SiLeetcode size={24} />
-            : <SiGeeksforgeeks size={24} />
-          }
-          {title}
-        </p>
-        <a
-          href={profilelink}
-          className="
-            mt-1 sm:mt-0
-            text-lg sm:text-xl md:text-2xl lg:text-3xl
-            hover:text-teal-500 transition-colors duration-300
-          "
-        >
-          <FaLink />
-        </a>
+          <div className={`${title==="Leetcode"?"text-yellow-600":"text-green-600"} flex gap-4 items-center`}>
+            <p className='text-[1.5rem]'>
+              {
+                title==="Leetcode"?(<SiLeetcode/>):(<SiGeeksforgeeks/>)
+              }
+            </p>
+            <p className='text-[2rem]'>{title}</p>
+          </div>
+          <p className='text-gray-300 m-1'>{description}</p>
+          <div >
+              <a
+                href={profilelink}
+                className="
+                  mt-1 sm:mt-0
+                  text-lg sm:text-xl md:text-2xl lg:text-3xl
+                  hover:text-teal-500 transition-colors duration-300 
+                "
+              >
+                <FaLink />
+            </a>
+          </div>
+        </div>
+        
       </div>
     </div>
   );

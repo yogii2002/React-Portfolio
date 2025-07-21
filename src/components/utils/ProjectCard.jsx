@@ -51,6 +51,20 @@ export default function ProjectCard({projectlogo,projecttitle,projectdescription
                 </div>
                 )
               }
+              {
+                projecttitle=="Upwise" && (
+                <div className='flex gap-2 text-[2rem]'>
+                    <div className='hover:text-teal-500 '><DiHtml5/></div>
+                    <div className='hover:text-teal-500 '><RiTailwindCssFill/></div>
+                    <div className='hover:text-teal-500 '><DiMongodb/></div>
+                    <div className='hover:text-teal-500 '><FaNodeJs/></div>
+                    <div className='hover:text-teal-500 '><FaReact/></div>
+                    <div className='hover:text-teal-500 '><SiExpress/></div>
+                    <div className='hover:text-teal-500 '><SiSocketdotio/></div>
+                    <div className='hover:text-teal-500 '><SiPostman/></div>
+                </div>
+                )
+              }
 
               {
                 projecttitle=="QuickChat" && (
