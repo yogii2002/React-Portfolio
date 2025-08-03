@@ -29,7 +29,7 @@ export default function Projects() {
           projectlogo={KanoonSarathi}
           projecttitle="Kanoon Sarathi"
           projectdescription="Kanoon Sarathi empowers lawyers, judges, and law students to quickly access relevant case laws and legal precedents, reducing time spent on manual research."
-          liveurl="https://web-production-3add.up.railway.app/"
+          liveurl="https://kanoon-sarathi.onrender.com"
           githuburl="https://github.com/yogii2002/Kanoon-Sarthi"
         />
 
