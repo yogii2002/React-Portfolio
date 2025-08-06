@@ -41,7 +41,7 @@ export default function Contact() {
       <img src={myimage} alt="Yogesh Jat" />
     </div>
   </div>
-  <span className='font-semibold text-gray-300'>Made with 💖 by Yogesh Jat 😉</span>
+  <span className='font-semibold text-gray-300'>Made with Love by Yogesh Jat </span>
 </div>
 
   )
